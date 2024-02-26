@@ -18,9 +18,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
-          child: Container(width: 50, height: 50, color: Colors.deepPurple,)
+      home: Scaffold(
+        appBar: AppBar(title: Text("Flutter"),),
+        body: Container(width: 80, height: 60, color: Colors.blue, margin: EdgeInsets.all(20), padding: EdgeInsets.all(20), child: Text("flutter"),),
+        
+        // body: Container( height: 600,
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     crossAxisAlignment: CrossAxisAlignment.center,
+        //     children: const [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),]
+        //   ),
+        // ),
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [Icon(Icons.phone), Icon(Icons.message), Icon(Icons.contact_page)],
+          ),
+        ),
       )
+          // child: Container(width: 50, height: 50, color: Colors.deepPurple,)
           // 1. 글자를 넣는 방법
           //Text('안녕'),
           // 2. 아이콘을 넣는 방법
@@ -36,6 +52,14 @@ class MyApp extends StatelessWidget {
           // 2) SizedBox()
           // Container(width: 50, height: 50, color: Colors.deepPurple,)
           // 스타일을 줄 땐 (스타일명 : 값)
+      // Style
+      // 1. 여러 위젯 가로로 배치하는 법
+      // Row(children:[])
+      // 예시 Row(children: [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),])
+      // 2. 여러 위젯 세로로 배치하는 법
+      // Column(children:[])
+      // 예시 Column(children: [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),])
+
     );
   }
 }
