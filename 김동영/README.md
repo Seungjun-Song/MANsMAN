@@ -100,3 +100,158 @@ UI/UX 디자인부터, 앱 개발, QA, 출시 후 유지보수 모두 각각 해
 3. 기획에 따른 필요 기술 스택 정리하기
 
 </aside>
+
+---
+
+# 2024-02-27 (화) TIL
+
+## Flutter란?
+
+Google에서 개발 및 지원하는 오픈 소스 프레임워크
+
+애플리케이션의 사용자 인터페이스(UI)를 단일 코드 베이스로 구축
+
+일관되고 세련된 애플리케이션 UI를 만드는 프로세스를 간소화
+
+Google이 개발한 오픈 소스 프로그래밍 언어인 Dart를 사용
+
+위젯을 사용하여 UI 레이아웃을 구성
+
+<aside>
+💡 **위젯? (Widget)**
+
+Flutter 위젯은 개발자가 손쉽게 사용자 지정할 수 있도록 설계되었습니다. Flutter는 구성 접근 방식을 통해 이를 실현합니다. 즉, 대부분의 위젯은 작은 위젯으로 구성되며, 가장 기본적인 위젯은 특정한 용도가 있습니다. 따라서 개발자가 위젯을 결합하거나 편집하여 새 위젯을 만들 수 있습니다.
+
+Flutter는 플랫폼의 기본 제공 위젯을 사용하는 것이 아니라, 자체 그래픽 엔진을 사용하여 위젯을 렌더링합니다. 덕분에 사용자는 플랫폼 전체에 걸쳐 Flutter 애플리케이션에서 유사한 모양과 느낌을 경험할 수 있습니다. 또한 일부 Flutter 위젯은 플랫폼별 위젯에서는 수행할 수 없는 기능을 수행할 수 있으므로, 이러한 접근 방식은 개발자에게 유연성을 제공합니다.
+
+Flutter는 커뮤니티에서 개발한 위젯도 손쉽게 사용할 수 있도록 합니다. Flutter의 아키텍처는 여러 위젯 라이브러리를 적용하는 기능을 지원하며, Flutter는 커뮤니티에서 새로운 위젯 라이브러리를 구축하고 유지 관리하도록 장려합니다.
+
+출처 : [https://aws.amazon.com/ko/what-is/flutter/](https://aws.amazon.com/ko/what-is/flutter/)
+
+</aside>
+
+---
+
+## 내가 느낀 Dart의 다른 언어들과 다른 특징!
+
+1. void 함수 : return이 없는 함수
+2. 각 명령 마지막에는 ‘;’ 필수!
+3. 객체 지향 프로그래밍 (OOP)
+4. Null safety
+5. debug mode 와 release mode 의 두 가지 런타임 모드
+
+---
+
+### Flutter를 사용하기 위한 Dart 기본 문법
+
+```dart
+// Main 함수 : 앱이 시작되는 곳 즉 처음 호출되는 함수
+
+void main() {
+	print("Hello World!");
+}
+```
+
+```dart
+// print함수 : 콘솔에 출력, JS의 console.log와 같은 기능
+
+void main() {
+	String hi = '안녕하세요.';
+	print(hi);
+}
+```
+
+### Dart 변수 종류
+
+int, double, String, bool, List, Set, Map
+
+```dart
+// int형
+int value = 10;
+
+// double형
+double value = 2.29;
+
+// String형
+String value = '안녕하세요';
+
+// boolean형
+bool value1 = true;
+bool value2 = false;
+
+// List형
+List<String> = ['a', 'b', 'c'];
+
+// Set형
+Set<String> = {'a', 'b', 'c'};
+
+// MAP형
+Map<String, int> = {'a': 1, 'b': 2, 'c': 3}
+```
+
+### Dart 상수 종류
+
+- final
+    - 컴파일 후 처리가 실행
+    
+    ```dart
+    // final 한정자
+    final String test1 = '문자열';
+    final test2 = '문자열';
+    ```
+    
+- const
+    - 컴파일 시 처리가 실행
+    
+    ```dart
+    // const 한정자
+    const String test1 = '문자열';
+    const test2 = '문자열';
+    ```
+    
+
+### Dart 함수
+
+```dart
+// void형 함수, 인수 없을 때
+void hi() {
+print('안녕하세요');
+}
+
+// 리턴 유형이 존재하는 함수
+String getHello() {
+	return '안녕하세요';
+}
+
+// 명명된 파라미터를 이용하는 함수
+void main() {
+	printHello(name: 'flutter');
+	printHello2();
+}
+
+void printHello({String? name}) {
+	print("Hello! $name");
+}
+
+void printHello2({String? name="Dart"}) {
+	print("Hello! $name");
+}
+
+// 화살표 함수
+void main() {
+	int added = add(num1: 1, num2: 2);
+	total(total: added);
+}
+
+int add({int num1 = 0, int num2 = 0}) => num1 + num2;
+void total({int total = 0}) => print("합계는 $total")
+```
+
+### Dart 연산자
+
+- 산술 연산자: +, -, *, /, ~/, %, ++, --
+- 대입 연산자: +=, -=, *=, /=, ~/=, %=
+- 비교 연산자: >, >=, ==, <, <=, !=
+- 논리 연산자:&&, ||, !
+- 유형 테스트 연산자: is, is!
+- 삼항 연산자: 판별식 ? A문 : B문
