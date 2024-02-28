@@ -55,10 +55,12 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
-    # assets에 있는 모든 파일을 쓸것이다.
+  # assets에 있는 모든 파일을 쓸것이다.
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+
+  # Material Design 쓰려면 pubspec.yaml에 이 항목이 true라고 되어있어야함.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:

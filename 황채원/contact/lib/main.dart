@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 
 void main() {
@@ -6,12 +8,6 @@ void main() {
   runApp(const MyApp());
 }
 
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -19,47 +15,47 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Flutter"),),
-        body: Container(width: 80, height: 60, color: Colors.blue, margin: EdgeInsets.all(20), padding: EdgeInsets.all(20), child: Text("flutter"),),
-        
-        // body: Container( height: 600,
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     children: const [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),]
-        //   ),
-        // ),
+        appBar: AppBar(
+          title: Text("앱임", style: TextStyle(color: Color(0xffc11212)),),
+          leading: Icon(Icons.account_tree_rounded),
+          actions: const [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),],
+        ),
+        body: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+                height: double.infinity,
+                width: 100,
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  border: Border.all(color: Colors.black)
+                ),
+                child : Text("나집간다.", style: TextStyle(color: Colors.grey, fontWeight:FontWeight.w600), )),
+            Icon(Icons.star),
+            Icon(Icons.star),
+            Icon(Icons.star),
+            SizedBox(
+              child : ElevatedButton(
+                child:Text('글자'),
+                      onPressed: (){},)),
+          ],
+        ),
         bottomNavigationBar: BottomAppBar(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [Icon(Icons.phone), Icon(Icons.message), Icon(Icons.contact_page)],
+          child: SizedBox(
+            height: 120,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(Icons.phone),
+                Icon(Icons.message),
+                Icon(Icons.contact_page)],
+            ),
           ),
         ),
-      )
-          // child: Container(width: 50, height: 50, color: Colors.deepPurple,)
-          // 1. 글자를 넣는 방법
-          //Text('안녕'),
-          // 2. 아이콘을 넣는 방법
-          // Icon(Icons.아이콘 이름)
-          // 3. 이미지는 넣는 방법
-          // Image.asset('경로')
-          // 1) assets 디렉토리 만들기
-          // 2) 이미지 등록
-          // 3) pubspec.yaml에 등록
-          // 4) Image.asset('경로')
-          // 4. 박스를 넣는 방법
-          // 1) Container()
-          // 2) SizedBox()
-          // Container(width: 50, height: 50, color: Colors.deepPurple,)
-          // 스타일을 줄 땐 (스타일명 : 값)
-      // Style
-      // 1. 여러 위젯 가로로 배치하는 법
-      // Row(children:[])
-      // 예시 Row(children: [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),])
-      // 2. 여러 위젯 세로로 배치하는 법
-      // Column(children:[])
-      // 예시 Column(children: [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),])
-
+      ),
     );
   }
 }
+
