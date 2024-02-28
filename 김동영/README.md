@@ -255,3 +255,6 @@ void total({int total = 0}) => print("합계는 $total")
 - 논리 연산자:&&, ||, !
 - 유형 테스트 연산자: is, is!
 - 삼항 연산자: 판별식 ? A문 : B문
+---
+# 2024-02-28 (수) TIL
+[Flutter 클론코딩](https://lab.ssafy.com/s10-bigdata-recom-sub1/S10P21E106/-/tree/master/%EA%B9%80%EB%8F%99%EC%98%81/flutter/toonfilx?ref_type=heads)
