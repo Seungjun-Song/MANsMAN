@@ -1,16 +1,11 @@
-# toonfilx
+# 2024-02-28 (수) TIL
+# Flutter 클론코딩
 
-A new Flutter project.
+## Flutter 무료 강의 수강 후 간단한 UI 클론코딩
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 느낀점
+1. Flutter는 모바일 애플리케이션 UI를 만드는 프레임워크다.
+2. Flutter는 Widget이라는 개념이 있는데 이는 React의 컴포넌트 같은 개념이다.
+3. Flutter는 매우 다양한 옵션을 개발자에게 제공함으로써 개발 경험을 좋게 만들어 준다.
+---
+Flutter에 대한 꾸준한 학습을 통해 이번 프로젝트에서 처음으로 모바일 앱을 만들어 보고싶습니다.
