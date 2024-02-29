@@ -5,57 +5,93 @@ import 'package:flutter/widgets.dart';
 
 void main() {
   // runApp 앱 시작해주세요. (const 앱 메인페이지)
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  // 변수
+  var a = 1;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Text(a.toString()),
+          onPressed: (){
+            print(a);
+            a++;
+          },
+        ),
         appBar: AppBar(
           title: Text("앱임", style: TextStyle(color: Color(0xffc11212)),),
           leading: Icon(Icons.account_tree_rounded),
-          actions: const [Icon(Icons.star),Icon(Icons.star),Icon(Icons.star),],
-        ),
-        body: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-                height: double.infinity,
-                width: 100,
-                margin: EdgeInsets.all(20),
-                padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                  border: Border.all(color: Colors.black)
-                ),
-                child : Text("나집간다.", style: TextStyle(color: Colors.grey, fontWeight:FontWeight.w600), )),
+          actions: const [
             Icon(Icons.star),
             Icon(Icons.star),
             Icon(Icons.star),
-            SizedBox(
-              child : ElevatedButton(
-                child:Text('글자'),
-                      onPressed: (){},)),
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          child: SizedBox(
-            height: 120,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page)],
+        bottomNavigationBar: CustomBottomAppBar(),
+        body: ListView.builder(itemCount: 5, itemBuilder: (context, i){
+          print(i);
+          return ListTile(
+            leading: Icon(Icons.account_circle_rounded),
+            title: Text("홍길동", style: TextStyle(fontSize: 20,),),
+          );
+        }),
+      ),);
+  }
+}
+
+class ShopItem extends StatelessWidget {
+  const ShopItem ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Container(
+            height: double.infinity,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            decoration: BoxDecoration(
+                color: Colors.amberAccent,
+                border: Border.all(color: Colors.black)
             ),
-          ),
+            child : Text("나집간다.", style: TextStyle(color: Colors.grey, fontWeight:FontWeight.w600), )),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        SizedBox(
+            child : ElevatedButton(
+              child:Text('글자'),
+              onPressed: (){},)),
+      ],
+    );
+  }
+}
+
+class CustomBottomAppBar extends StatelessWidget {
+  const CustomBottomAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      child: SizedBox(
+        height: 120,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Icon(Icons.phone),
+            Icon(Icons.message),
+            Icon(Icons.contact_page)],
         ),
       ),
     );
   }
 }
-
